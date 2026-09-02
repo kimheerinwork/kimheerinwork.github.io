@@ -39,7 +39,7 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "coyseio-ai-fashion-film",
-    title: "COYSEIO 재해석 AI 패션 콘셉트 필름",
+    title: "COYSEIO 재해석 필름",
     subtitle: "COYSEIO Reinterpretation — AI Fashion Concept Film",
     year: "2026",
     date: "2026.7.12",
