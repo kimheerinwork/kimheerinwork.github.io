@@ -75,5 +75,20 @@ window.PORTFOLIO_PROJECTS = [
     descriptionEn: "This project is a Japanese calendar design themed around foods that match each month of the year. Rather than presenting time as something that simply passes, the concept reinterprets the year as something to be “eaten through,” connecting each month with a food that reflects its seasonal mood and atmosphere.\n\nThe calendar was designed in Japanese, balancing readability and structure while allowing each monthly food image to form a cohesive visual theme. Graphic elements such as stars, spoons, and forks, along with soft and dreamy colors, were used to create a playful and warm visual identity.\n\nAdobe Illustrator was used for the main graphic composition and calendar layout, while Adobe Photoshop was used for image editing, texture, and color refinement. Nano Banana Pro was used to generate and develop selected food imagery and visual elements.\n\nAt its core, the project explores the idea of remembering a year through food and experiencing each month as something to be gradually consumed, turning the passage of time into a more sensory and imaginative experience.",
     description: "A Japanese calendar design that connects each month with seasonal food through a soft and playful visual system.",
     video: null
+  },
+  {
+    id: "selfish-symbiosis",
+    title: "Selfish Symbiosis",
+    year: "2022",
+    date: "2022.11.23",
+    tools: ["Procreate", "Handmade / Manual Work"],
+    category: "Fashion Design / Concept Development / Handmade",
+    cover: "images/project05/cover.jpg?v=1",
+    coverAlt: "Selfish Symbiosis 패션 디자인 화보",
+    images: ["images/project05/01.jpg"],
+    descriptionKo: "본 작품은 ‘이기적 공생’이라는 주제를 통해 인간과 사물 사이에 존재하는 모순적인 관계를 조명한 패션 디자인 프로젝트입니다.\n\n인간의 편의를 위해 끊임없이 생산되는 소비재들이 사용 이후 쉽게 외면받고 버려지는 현실에 주목했습니다. 특히 자연의 분해자인 곰팡이조차 쉽게 분해하지 못하는 쓰레기를 계속해서 만들어내면서도, 그 안에서 편리함과 생존을 추구하는 인간의 모습을 이기적인 공생 관계로 해석했습니다.\n\n이러한 문제의식을 패션이라는 매체로 시각화해, 인간과 인공물, 소비와 폐기, 자연과 비자연적인 물질이 서로 얽혀 있는 불편한 관계를 표현했습니다. 단순한 환경 문제의 재현을 넘어, 우리가 만들어낸 사물에 의존하면서 동시에 그것을 버리고 살아가는 현대인의 모순적인 생존 방식을 드러내는 데 중점을 두었습니다.\n\n디자인 구상과 시각화 과정에는 Procreate를 활용했으며, 일부 제작 과정은 수작업으로 진행해 소재와 형태의 물성을 직접적으로 표현했습니다.",
+    descriptionEn: "Selfish Symbiosis is a fashion design project that explores the contradictory relationship between humans and the objects they create.\n\nThe project focuses on consumer goods that are produced for human convenience but are quickly neglected and discarded after use. While humans continue to generate waste that even natural decomposers such as fungi cannot easily break down, they remain dependent on these materials for comfort and survival. This contradiction is interpreted as a form of selfish symbiosis.\n\nThrough fashion design, the project visualizes the uneasy relationship between humans and artificial objects, consumption and disposal, and nature and non-biodegradable materials. Rather than simply addressing environmental pollution, the work reflects on the paradox of modern life in which we continuously depend on manufactured objects while simultaneously producing and abandoning them.\n\nProcreate was used for concept development and digital visualization, while parts of the project were completed through manual, handmade processes to emphasize materiality and physical form.",
+    description: "A fashion design project exploring the contradictory relationship between humans, manufactured objects, consumption and disposal.",
+    video: null
   }
 ];
