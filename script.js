@@ -11,13 +11,13 @@
   const twoDigit = (index) => String(index + 1).padStart(2, "0");
 
   function projectMarkup(project, index) {
-    return `<article class="project reveal ${index % 2 ? "project--reverse" : ""}">
+    return `<article class="project reveal">
       <button class="project-image" type="button" data-project="${project.id}" aria-label="Open ${project.title} project">
         <img src="${project.cover}" alt="Abstract placeholder artwork for ${project.title}" loading="lazy">
+        <span class="view-label">View project <span aria-hidden="true">↗</span></span>
       </button>
       <div class="project-info">
-        <p class="project-number">${twoDigit(index)}</p>
-        <h3><button type="button" data-project="${project.id}">${project.title}</button></h3>
+        <div class="project-title-row"><p class="project-number">${twoDigit(index)}</p><h3><button type="button" data-project="${project.id}">${project.title}</button></h3></div>
         <div class="project-meta"><p>${project.category}</p><p>${project.year}</p></div>
       </div>
     </article>`;
@@ -33,10 +33,19 @@
     const index = projects.indexOf(project);
     lastFocused = document.activeElement;
     overlayNumber.textContent = `${twoDigit(index)} / ${twoDigit(projects.length)}`;
-    overlayContent.innerHTML = `<header class="overlay-header">
-      <p>${project.category}</p><h2 id="overlay-title">${project.title}</h2>
-      <div><p>${project.year}</p><p>${project.description}</p></div>
-    </header>
+    overlayContent.innerHTML = `<section class="detail-hero">
+      <div class="detail-cover"><img src="${project.cover}" alt="${project.title} cover image"></div>
+      <header class="overlay-header">
+        <p class="detail-label">Selected work · ${twoDigit(index)}</p>
+        <h2 id="overlay-title">${project.title}</h2>
+        <dl class="detail-facts">
+          <div><dt>Year</dt><dd>${project.year}</dd></div>
+          <div><dt>Discipline</dt><dd>${project.category}</dd></div>
+        </dl>
+        <div class="detail-description"><p class="detail-description-label">About this work</p><p>${project.description}</p></div>
+        <p class="detail-scroll">Project images <span aria-hidden="true">↓</span></p>
+      </header>
+    </section>
     <div class="overlay-media">
       ${project.video ? `<video controls preload="metadata"><source src="${project.video}"></video>` : ""}
       ${project.images.map((src, imageIndex) => `<img src="${src}" alt="${project.title} project image ${imageIndex + 1}" loading="lazy">`).join("")}
