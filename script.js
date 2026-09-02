@@ -11,13 +11,15 @@
   const twoDigit = (index) => String(index + 1).padStart(2, "0");
 
   function projectMarkup(project, index) {
+    const subtitle = project.subtitle ? `<span class="project-subtitle">${project.subtitle}</span>` : "";
+    const coverStyle = project.coverPosition ? ` style="object-position:${project.coverPosition}"` : "";
     return `<article class="project reveal">
       <button class="project-image" type="button" data-project="${project.id}" aria-label="Open ${project.title} project">
-        <img src="${project.cover}" alt="Abstract placeholder artwork for ${project.title}" loading="lazy">
+        <img src="${project.cover}" alt="${project.coverAlt || `Cover artwork for ${project.title}`}" loading="lazy"${coverStyle}>
         <span class="view-label">View project <span aria-hidden="true">↗</span></span>
       </button>
       <div class="project-info">
-        <div class="project-title-row"><p class="project-number">${twoDigit(index)}</p><h3><button type="button" data-project="${project.id}">${project.title}</button></h3></div>
+        <div class="project-title-row"><p class="project-number">${twoDigit(index)}</p><h3><button type="button" data-project="${project.id}">${project.title}${subtitle}</button></h3></div>
         <div class="project-meta"><p>${project.category}</p><p>${project.year}</p></div>
       </div>
     </article>`;
@@ -33,17 +35,27 @@
     const index = projects.indexOf(project);
     lastFocused = document.activeElement;
     overlayNumber.textContent = `${twoDigit(index)} / ${twoDigit(projects.length)}`;
+    const titleText = project.titleLines
+      ? project.titleLines.map(line => `<span class="title-line">${line}</span>`).join("")
+      : `<span class="title-line">${project.title}</span>`;
+    const detailTitle = `${titleText}${project.subtitle ? `<span class="detail-subtitle">${project.subtitle}</span>` : ""}`;
+    const detailDescription = project.descriptionKo || project.descriptionEn
+      ? `<div class="bilingual-description">
+          ${project.descriptionKo ? `<section lang="ko"><p class="detail-description-label">한국어 설명</p>${project.descriptionKo.split("\n\n").map(text => `<p>${text}</p>`).join("")}</section>` : ""}
+          ${project.descriptionEn ? `<section lang="en"><p class="detail-description-label">English Description</p>${project.descriptionEn.split("\n\n").map(text => `<p>${text}</p>`).join("")}</section>` : ""}
+        </div>`
+      : `<div class="detail-description"><p class="detail-description-label">About this work</p><p>${project.description}</p></div>`;
     overlayContent.innerHTML = `<section class="detail-hero">
-      <div class="detail-cover"><img src="${project.cover}" alt="${project.title} cover image"></div>
+      <div class="detail-cover"><img src="${project.cover}" alt="${project.coverAlt || `${project.title} cover image`}"></div>
       <header class="overlay-header">
         <p class="detail-label">Selected work · ${twoDigit(index)}</p>
-        <h2 id="overlay-title">${project.title}</h2>
+        <h2 id="overlay-title">${detailTitle}</h2>
         <dl class="detail-facts">
-          <div><dt>Year</dt><dd>${project.year}</dd></div>
-          <div><dt>Discipline</dt><dd>${project.category}</dd></div>
+          <div><dt>Date</dt><dd>${project.date || project.year}</dd></div>
+          ${project.award ? `<div><dt>Award</dt><dd>${project.award}</dd></div>` : ""}
+          <div><dt>Tool</dt><dd>${project.tools ? project.tools.join("<br>") : project.category}</dd></div>
         </dl>
-        <div class="detail-description"><p class="detail-description-label">About this work</p><p>${project.description}</p></div>
-        <p class="detail-scroll">Project images <span aria-hidden="true">↓</span></p>
+        ${detailDescription}
       </header>
     </section>
     <div class="overlay-media">
@@ -77,8 +89,13 @@
   overlay.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeProject();
     if (event.key === "Tab") {
+      const focusable = [closeButton];
+      const currentIndex = focusable.indexOf(document.activeElement);
+      const nextIndex = event.shiftKey
+        ? (currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1)
+        : (currentIndex + 1) % focusable.length;
       event.preventDefault();
-      closeButton.focus();
+      focusable[nextIndex].focus();
     }
   });
 
