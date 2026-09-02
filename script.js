@@ -46,19 +46,22 @@
         </div>`
       : `<div class="detail-description"><p class="detail-description-label">About this work</p><p>${project.description}</p></div>`;
     overlayContent.innerHTML = `<section class="detail-hero">
-      <div class="detail-cover"><img src="${project.cover}" alt="${project.coverAlt || `${project.title} cover image`}"></div>
-      <header class="overlay-header">
+      <header class="overlay-header detail-title-block">
         <p class="detail-label">Selected work · ${twoDigit(index)}</p>
         <h2 id="overlay-title">${detailTitle}</h2>
+      </header>
+      <div class="detail-cover"><img src="${project.cover}" alt="${project.coverAlt || `${project.title} cover image`}"></div>
+      <section class="detail-info">
         <dl class="detail-facts">
-          <div><dt>Date</dt><dd>${project.date || project.year}</dd></div>
-          ${project.award ? `<div><dt>Award</dt><dd>${project.award}</dd></div>` : ""}
+          <div><dt>제작일</dt><dd>${project.date || project.year}</dd></div>
+          ${project.award ? `<div><dt>수상</dt><dd>${project.award}</dd></div>` : ""}
+          ${project.participation ? `<div><dt>참가</dt><dd>${project.participation}</dd></div>` : ""}
           <div><dt>Tool</dt><dd>${project.tools ? project.tools.join("<br>") : project.category}</dd></div>
         </dl>
         ${detailDescription}
-      </header>
+      </section>
     </section>
-    <div class="overlay-media">
+    <div class="overlay-media${project.detailFullBleed ? " overlay-media--full" : ""}" style="--detail-width:${project.detailWidth || "100%"}">
       ${project.video ? `<video controls preload="metadata"><source src="${project.video}"></video>` : ""}
       ${project.images.map((src, imageIndex) => `<img src="${src}" alt="${project.title} project image ${imageIndex + 1}" loading="lazy">`).join("")}
     </div>`;
