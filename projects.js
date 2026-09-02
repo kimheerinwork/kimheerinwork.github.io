@@ -53,5 +53,27 @@ window.PORTFOLIO_PROJECTS = [
     descriptionEn: "This project is an AI fashion concept film reinterpreting COYSEIO’s 2026 S/S Collection. It begins with the brand’s familiar youthful aesthetic, reminiscent of Japanese school uniforms, and gradually transitions into the softer, dreamlike, forest-inspired mood of the new season.\n\nThe film follows a schoolgirl-like character who discovers a small ant while walking through the woods. She follows it deeper into the forest and finds a mysterious key at the end of the trail. After picking it up, she arrives at a secluded cabin, where she discovers the garments from COYSEIO’s 2026 S/S Collection.\n\nThe project visualizes the transition from COYSEIO’s established girlish identity to the more natural and fairy-tale-like atmosphere of the new collection. Rather than simply presenting the garments, the film uses a short fantasy narrative to connect fashion, seasonal identity, and cinematic storytelling.\n\nGPT 2.0 was used for concept development and visual generation, while Kling AI was used to create character movement, forest environments, and cinematic sequences. “Paradise” by REMEDIOS was used as the background music to reinforce the film’s dreamy and lyrical atmosphere.",
     description: "An AI fashion concept film reinterpreting COYSEIO’s 2026 S/S Collection through a short fantasy narrative.",
     video: "videos/project03-480.m4v"
+  },
+  {
+    id: "japanese-food-calendar",
+    title: "Japanese Food-Themed Calendar Design",
+    year: "2025",
+    date: "2025.12.04",
+    tools: ["Adobe Illustrator", "Adobe Photoshop", "Nano Banana Pro"],
+    category: "Calendar Design / Graphic Design / Editorial",
+    cover: "images/project04/cover.jpg?v=1",
+    coverAlt: "파스텔 색감과 식기 그래픽으로 구성한 2026 일본어 음식 테마 캘린더 표지",
+    images: [
+      "images/project04/calendar-full.jpg",
+      "images/project04/01.jpg",
+      "images/project04/02.jpg",
+      "images/project04/03.jpg",
+      "images/project04/04.jpg"
+    ],
+    detailWidth: "70%",
+    descriptionKo: "달마다 어울리는 음식을 테마로 구성한 일본어 캘린더 디자인 프로젝트입니다. 한 해를 단순히 지나가는 시간이 아니라, 매달의 분위기와 계절감을 ‘먹어간다’는 개념으로 풀어내고자 했습니다. 이에 따라 각 달과 어울리는 음식을 선정해 월별 이미지를 구성하고, 음식이 주는 친근함과 계절의 감각이 함께 느껴지도록 시각화했습니다.\n\n전체 디자인은 일본어 달력을 기반으로 구성했으며, 숫자와 월별 정보가 잘 보이도록 정리하면서도 각 달의 음식 이미지가 하나의 테마로 자연스럽게 이어지도록 설계했습니다. 별, 스푼, 포크 등의 그래픽 요소와 부드럽고 포근한 색감을 활용해 아기자기하면서도 몽글한 분위기를 더했습니다.\n\n그래픽 구성과 캘린더 레이아웃은 Adobe Illustrator를 중심으로 제작했으며, 이미지 보정과 질감 표현, 색감 정리에는 Adobe Photoshop을 활용했습니다. 음식 이미지 및 일부 시각 요소를 구현하고 확장하는 과정에는 Nano Banana Pro를 사용했습니다.\n\n이 작품은 한 해를 음식과 함께 기억하고, 매달의 시간을 하나씩 맛보며 먹어간다는 개념을 중심으로 기획한 캘린더 디자인입니다.",
+    descriptionEn: "This project is a Japanese calendar design themed around foods that match each month of the year. Rather than presenting time as something that simply passes, the concept reinterprets the year as something to be “eaten through,” connecting each month with a food that reflects its seasonal mood and atmosphere.\n\nThe calendar was designed in Japanese, balancing readability and structure while allowing each monthly food image to form a cohesive visual theme. Graphic elements such as stars, spoons, and forks, along with soft and dreamy colors, were used to create a playful and warm visual identity.\n\nAdobe Illustrator was used for the main graphic composition and calendar layout, while Adobe Photoshop was used for image editing, texture, and color refinement. Nano Banana Pro was used to generate and develop selected food imagery and visual elements.\n\nAt its core, the project explores the idea of remembering a year through food and experiencing each month as something to be gradually consumed, turning the passage of time into a more sensory and imaginative experience.",
+    description: "A Japanese calendar design that connects each month with seasonal food through a soft and playful visual system.",
+    video: null
   }
 ];
