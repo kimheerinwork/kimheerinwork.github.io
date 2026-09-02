@@ -56,7 +56,8 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "japanese-food-calendar",
-    title: "Japanese Food-Themed Calendar Design",
+    title: "2026 캘린더",
+    subtitle: "Japanese Food-Themed Calendar Design",
     year: "2025",
     date: "2025.12.04",
     tools: ["Adobe Illustrator", "Adobe Photoshop", "Nano Banana Pro"],
@@ -78,7 +79,8 @@ window.PORTFOLIO_PROJECTS = [
   },
   {
     id: "selfish-symbiosis",
-    title: "Selfish Symbiosis",
+    title: "이기적공생",
+    subtitle: "Selfish Symbiosis",
     year: "2022",
     date: "2022.11.23",
     tools: ["Procreate", "Handmade / Manual Work"],
