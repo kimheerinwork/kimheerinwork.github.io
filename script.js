@@ -57,6 +57,7 @@
           ${project.award ? `<div><dt>수상</dt><dd>${project.award}</dd></div>` : ""}
           ${project.participation ? `<div><dt>참가</dt><dd>${project.participation}</dd></div>` : ""}
           <div><dt>Tool</dt><dd>${project.tools ? project.tools.join("<br>") : project.category}</dd></div>
+          ${project.bgm ? `<div><dt>BGM</dt><dd>${project.bgm}</dd></div>` : ""}
         </dl>
         ${detailDescription}
       </section>
