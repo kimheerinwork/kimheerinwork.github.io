@@ -62,7 +62,7 @@
       </section>
     </section>
     <div class="overlay-media${project.detailFullBleed ? " overlay-media--full" : ""}" style="--detail-width:${project.detailWidth || "100%"}">
-      ${project.video ? `<video controls preload="metadata"><source src="${project.video}"></video>` : ""}
+      ${project.video ? `<video controls playsinline preload="metadata" poster="${project.cover}"><source src="${project.video}" type="video/mp4">Your browser does not support HTML video.</video>` : ""}
       ${project.images.map((src, imageIndex) => `<img src="${src}" alt="${project.title} project image ${imageIndex + 1}" loading="lazy">`).join("")}
     </div>`;
     overlay.hidden = false;

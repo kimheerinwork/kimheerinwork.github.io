@@ -38,13 +38,19 @@ window.PORTFOLIO_PROJECTS = [
     video: null
   },
   {
-    id: "editorial",
-    title: "EDITORIAL",
-    year: "2025",
-    category: "Graphic / Editorial / Photography",
-    cover: "images/project03/cover.jpg",
-    images: ["images/project03/01.jpg", "images/project03/02.jpg"],
-    description: "An editorial project combining typography, graphic design and photography.",
-    video: null
+    id: "coyseio-ai-fashion-film",
+    title: "COYSEIO 재해석 AI 패션 콘셉트 필름",
+    subtitle: "COYSEIO Reinterpretation — AI Fashion Concept Film",
+    year: "2026",
+    date: "2026.7.12",
+    tools: ["GPT 2.0", "Kling AI"],
+    category: "AI Fashion Film / Concept Direction",
+    cover: "images/project03/cover.jpg?v=2",
+    coverAlt: "숲속 소녀와 오두막을 담은 COYSEIO AI 패션 콘셉트 필름 썸네일",
+    images: [],
+    descriptionKo: "COYSEIO의 2026 S/S 컬렉션을 재해석한 AI 패션 콘셉트 필름입니다. 기존 코이세이오가 보여주던 일본 학생 교복을 연상시키는 단정하고 소녀적인 이미지에서 출발해, 이번 시즌에 두드러진 숲속 소녀 같은 자연스럽고 몽환적인 분위기를 하나의 짧은 서사로 연결했습니다.\n\n영상은 일본 학생을 연상시키는 한 소녀가 숲속을 걷다가 작은 개미를 발견하는 장면에서 시작됩니다. 소녀는 개미를 따라 숲속 깊이 들어가고, 길 끝에서 작은 열쇠를 발견합니다. 열쇠를 주운 소녀가 숲속 오두막에 도착해 문을 열면, 그 안에서 COYSEIO의 2026 S/S 시즌 의상들을 마주하게 됩니다.\n\n기존 브랜드의 소녀적인 정체성에서 새로운 시즌의 자연적이고 동화적인 무드로 변화하는 과정을 ‘익숙한 학생의 이미지가 숲속 소녀의 세계로 이동하는 이야기’로 시각화했습니다. 패션 컬렉션의 분위기를 단순히 보여주는 데 그치지 않고, 브랜드 이미지의 변화를 판타지적인 스토리텔링으로 연결하는 데 중점을 두었습니다.\n\n장면의 콘셉트 기획과 이미지 제작에는 GPT 2.0을 활용했으며, 캐릭터의 움직임과 숲속 공간, 개미를 따라가는 장면과 오두막으로 이어지는 시네마틱 영상 구현에는 Kling AI를 사용했습니다.",
+    descriptionEn: "This project is an AI fashion concept film reinterpreting COYSEIO’s 2026 S/S Collection. It begins with the brand’s familiar youthful aesthetic, reminiscent of Japanese school uniforms, and gradually transitions into the softer, dreamlike, forest-inspired mood of the new season.\n\nThe film follows a schoolgirl-like character who discovers a small ant while walking through the woods. She follows it deeper into the forest and finds a mysterious key at the end of the trail. After picking it up, she arrives at a secluded cabin, where she discovers the garments from COYSEIO’s 2026 S/S Collection.\n\nThe project visualizes the transition from COYSEIO’s established girlish identity to the more natural and fairy-tale-like atmosphere of the new collection. Rather than simply presenting the garments, the film uses a short fantasy narrative to connect fashion, seasonal identity, and cinematic storytelling.\n\nGPT 2.0 was used for concept development and visual generation, while Kling AI was used to create character movement, forest environments, and cinematic sequences.",
+    description: "An AI fashion concept film reinterpreting COYSEIO’s 2026 S/S Collection through a short fantasy narrative.",
+    video: "videos/project03-480.m4v"
   }
 ];
