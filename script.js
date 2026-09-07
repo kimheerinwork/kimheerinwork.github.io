@@ -9,6 +9,7 @@
   let lastFocused = null;
 
   const twoDigit = (index) => String(index + 1).padStart(2, "0");
+  const hasKoreanTitle = (title) => /[ㄱ-ㅎㅏ-ㅣ가-힣]/.test(title);
 
   function projectMarkup(project, index) {
     const subtitle = project.subtitle ? `<span class="project-subtitle">${project.subtitle}</span>` : "";
@@ -19,7 +20,7 @@
         <span class="view-label">View project <span aria-hidden="true">↗</span></span>
       </button>
       <div class="project-info">
-        <div class="project-title-row"><p class="project-number">${twoDigit(index)}</p><h3><button type="button" data-project="${project.id}">${project.title}${subtitle}</button></h3></div>
+        <div class="project-title-row"><p class="project-number">${twoDigit(index)}</p><h3 class="${hasKoreanTitle(project.title) ? "title-ko" : ""}"><button type="button" data-project="${project.id}">${project.title}${subtitle}</button></h3></div>
         <div class="project-meta"><p>${project.category}</p><p>${project.year}</p></div>
       </div>
     </article>`;
@@ -48,7 +49,7 @@
     overlayContent.innerHTML = `<section class="detail-hero">
       <header class="overlay-header detail-title-block">
         <p class="detail-label">Selected work · ${twoDigit(index)}</p>
-        <h2 id="overlay-title">${detailTitle}</h2>
+        <h2 id="overlay-title" class="${hasKoreanTitle(project.title) ? "title-ko" : ""}">${detailTitle}</h2>
       </header>
       <div class="detail-cover"><img src="${project.cover}" alt="${project.coverAlt || `${project.title} cover image`}"></div>
       <section class="detail-info">
