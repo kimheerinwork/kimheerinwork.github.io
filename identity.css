@@ -1,0 +1,70 @@
+:root{--mint:#B8D1C8;--mint-soft:#DCE7E2}
+.visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+.about-profile{margin:7vh 0 0;align-self:start}
+.about-profile img{width:100%;max-width:583px;height:auto;object-fit:contain}
+@media(max-width:767px){.about-profile{margin:65px 0 45px}.about-profile img{max-width:420px;margin:auto}}
+.brand-logo{display:inline-flex!important;align-items:center;gap:10px;flex-shrink:0}
+.brand-logo img{width:158px;height:auto;transition:opacity .35s}
+.brand-logo i{width:6px;height:6px;border-radius:50%;background:var(--mint);flex-shrink:0}
+a:hover>.brand-logo img{opacity:.75}
+.site-header .identity{align-items:center}
+.site-header .identity>.brand-logo{color:var(--ink)}
+#menu-open{display:block;min-height:36px}
+#menu-open span{color:var(--ink);padding-left:10px}
+.identity-menu{position:fixed;inset:0;width:100%;max-width:none;height:100%;max-height:none;margin:0;padding:26px 4vw 50px;border:0;background:var(--paper);color:var(--ink);overflow:auto;opacity:0;transform:translateY(8px);transition:opacity .35s,transform .35s}
+.identity-menu.is-open{opacity:1;transform:none}
+.identity-menu::backdrop{background:var(--paper)}
+.identity-menu-top{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.identity-menu-top button{font-size:11px;letter-spacing:.08em;min-height:44px}
+.identity-menu-layout{display:grid;grid-template-columns:1fr 1fr;gap:65px 10vw;max-width:1260px;margin:75px auto 0}
+.identity-menu-nav{display:flex;flex-direction:column;align-items:flex-start;gap:42px}
+.identity-menu-nav button{display:grid;gap:10px;padding:0;text-align:left;font-weight:400;font-size:clamp(28px,3.5vw,52px);letter-spacing:-.035em;line-height:1.1}
+.menu-number{font-size:11px;letter-spacing:.06em;color:var(--muted);transition:color .35s}
+.identity-menu-nav button:hover .menu-number,.identity-menu-nav button:focus-visible .menu-number{color:#536f65}
+.identity-menu button>span:last-child,.identity-footer nav button{border-bottom:1px solid transparent;transition:border-color .35s}
+.identity-menu button:hover>span:last-child,.identity-menu button:focus-visible>span:last-child,.identity-footer nav button:hover,.identity-footer nav button:focus-visible{border-color:var(--mint)}
+.designer-statement{font-family:"Pretendard",var(--sans);font-size:18px;line-height:1.85;word-break:keep-all;overflow-wrap:anywhere;max-width:510px}
+.designer-statement p{margin:0 0 24px}
+.identity-statement{font-size:11px;line-height:1.65;letter-spacing:.07em;margin:36px 0 0}
+.identity-menu-copy .identity-statement{border-left:2px solid var(--mint);padding-left:18px}
+.menu-contact{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:10vw;padding-top:30px;border-top:1px solid var(--mint)}
+.menu-contact>p,.contact-composition>p{font-size:12px;line-height:1.7;margin:0}
+.menu-contact>p span{font-size:10px;color:var(--muted)}
+.identity-contacts{margin:0;min-width:0;font-size:12px;line-height:1.7;font-style:normal}
+.identity-contacts>div{display:grid;grid-template-columns:40px minmax(0,1fr);gap:12px;margin-bottom:12px}
+.identity-contacts dt{color:var(--muted);font-size:10px}
+.identity-contacts dd{margin:0;overflow-wrap:anywhere}
+.identity-contacts a{text-decoration:none;border-bottom:1px solid transparent;transition:border-color .35s}
+.identity-contacts a:hover{border-color:var(--mint)}
+.identity-footer{margin:70px 4vw 0;padding:45px 0 24px;border-top:1px solid var(--mint);font-size:10px}
+.footer-composition{display:grid;grid-template-columns:1.2fr 1fr .45fr;gap:45px;align-items:start}
+.footer-brand>p{font-size:10px;margin-top:18px}
+.footer-brand .identity-statement{margin-top:26px}
+.identity-footer nav{display:flex;align-items:flex-start;flex-direction:column;gap:20px}
+.identity-footer nav button{padding:0 0 4px;font-size:11px;letter-spacing:.06em}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;gap:25px;margin-top:65px;font-size:10px;letter-spacing:.04em}
+.footer-bottom button{font-size:10px;min-height:44px;padding:8px 0}
+.side-panel>.identity-footer{margin-left:0;margin-right:0}
+.contact-composition{max-width:640px;padding:25px 0 60px}
+.contact-composition .identity-statement{margin-bottom:40px}
+.about-copy .about-statement{margin-top:48px}
+.about-copy .about-statement p{color:var(--ink)}
+body.menu-visible #canvas-viewport,body:has(.side-panel:not([hidden])) #canvas-viewport,body:has(.project-overlay:not([hidden])) #canvas-viewport{overflow:hidden}
+.identity-menu :focus-visible,.identity-footer :focus-visible,#menu-open:focus-visible{outline:1px solid var(--ink);outline-offset:6px}
+@media(max-width:767px){
+ .site-header .identity>.brand-logo{display:inline-flex}
+ .brand-logo img{width:128px}
+ .site-header nav #menu-open{display:block}
+ .identity-menu{padding:18px 22px 32px}
+ .identity-menu-layout{grid-template-columns:1fr;gap:42px;margin-top:42px}
+ .identity-menu-nav{gap:28px}
+ .identity-menu-nav button{font-size:32px}
+ .identity-menu-copy .designer-statement{display:none}
+ .identity-menu-copy .identity-statement{margin:0}
+ .menu-contact{grid-column:auto;grid-template-columns:1fr;gap:22px}
+ .identity-footer{margin:55px 25px 0;padding-top:35px}
+ .footer-composition{grid-template-columns:1fr;gap:38px}
+ .identity-footer .identity-contacts>div{grid-template-columns:1fr;gap:2px;margin-bottom:20px}
+ .footer-bottom{flex-direction:column;align-items:flex-start;margin-top:40px;gap:15px}
+ .designer-statement{font-size:17px}
+}

@@ -17,12 +17,13 @@
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
   <link rel="stylesheet" href="style.css?v=21">
   <link rel="stylesheet" href="refinements.css?v=24">
+  <link rel="stylesheet" href="identity.css?v=26">
 </head>
 <body class="intro-active">
   <a class="skip-link" href="#archive-list">Skip to archive</a>
   <header class="site-header" aria-label="Site header">
-    <a class="identity" href="#home" aria-label="KIM HEERIN visual archive home"><strong>KIM HEERIN</strong><span>GRAPHIC DESIGNER<br>KOREA</span></a>
-    <nav aria-label="Primary navigation"><button type="button" data-panel="archive-panel">ARCHIVE</button><button type="button" data-panel="about-panel">ABOUT</button><a href="mailto:kimheerin.work@gmail.com">CONTACT</a></nav>
+    <a class="identity" href="#home" aria-label="KIM HEERIN visual archive home"><span class="brand-logo"><img src="images/kimheerin-logo.png" width="471" height="138" alt="KIM HEERIN"><i aria-hidden="true"></i></span><span>GRAPHIC DESIGNER<br>KOREA</span></a>
+    <nav aria-label="Primary navigation"><button type="button" id="menu-open" aria-haspopup="dialog" aria-controls="identity-menu" aria-expanded="false">MENU <span aria-hidden="true">＋</span></button></nav>
   </header>
   <main id="home">
     <section class="intro" id="intro" aria-label="Portfolio introduction">
@@ -52,10 +53,11 @@
   </aside>
   <aside class="side-panel about-panel" id="about-panel" aria-labelledby="about-title" hidden>
     <header><p>PROFILE / KIM HEERIN</p><button type="button" data-close-panel aria-label="Close about">CLOSE ×</button></header>
-    <div class="about-layout"><h2 id="about-title">A SMALL LIGHT<br>IN THE<br><em>DEEP SEA.</em></h2><div class="about-copy"><p>Born in 2006, KIM HEERIN is a visual designer and creative director based in Korea.</p><p>Her practice spans visual identity, fashion, graphic design, moving image and art direction, exploring the relationship between emotion, fantasy and visual storytelling.</p></div><address><span>KOREA</span><a href="mailto:kimheerin.work@gmail.com">EMAIL ↗</a><a href="https://instagram.com/h33rin" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><span>© 2026 KIM HEERIN</span></address></div>
+    <div class="about-layout"><figure class="about-profile"><img src="images/heerin-profile.png" width="583" height="748" alt="김희린 프로필 이미지"><figcaption id="about-title" class="visually-hidden">ABOUT KIM HEERIN</figcaption></figure><div class="about-copy"><p>Born in 2006, KIM HEERIN is a visual designer and creative director based in Korea.</p><p>Her practice spans visual identity, fashion, graphic design, moving image and art direction, exploring the relationship between emotion, fantasy and visual storytelling.</p></div><address><span>KOREA</span><a href="mailto:kimheerin.work@gmail.com">EMAIL ↗</a><a href="https://instagram.com/h33rin" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><span>© 2026 KIM HEERIN</span></address></div>
   </aside>
   <div class="project-overlay" id="project-overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden><div class="project-bar"><button type="button" id="overlay-close">← BACK TO CANVAS</button><p id="overlay-number"></p></div><article id="overlay-content"></article></div>
   <div class="cursor" id="cursor" aria-hidden="true"><span>DRAG</span></div>
   <script src="projects.js?v=20"></script><script src="script.js?v=24"></script>
+  <script src="identity.js?v=25"></script>
 </body>
 </html>
