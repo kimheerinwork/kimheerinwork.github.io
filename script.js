@@ -22,9 +22,9 @@ function zoomAt(next,cx=innerWidth/2,cy=innerHeight/2){const old=camera.scale,ne
 function renderMinimap(){const dots=$("#minimap-dots");dots.innerHTML=projects.map(p=>{const c=p.canvas||{};return `<b style="left:${((c.x||0)/WORLD.w)*100}%;top:${((c.y||0)/WORLD.h)*100}%"></b>`}).join("")}
 function updateMinimap(){const v=$("#minimap-view");if(!v)return;const w=Math.min(100,(innerWidth/(WORLD.w*camera.scale))*100),h=Math.min(100,(innerHeight/(WORLD.h*camera.scale))*100);v.style.width=w+"%";v.style.height=h+"%";v.style.left=Math.max(0,Math.min(100-w,(-camera.x/(WORLD.w*camera.scale))*100))+"%";v.style.top=Math.max(0,Math.min(100-h,(-camera.y/(WORLD.h*camera.scale))*100))+"%"}
 function beginIntro(){
- if(innerWidth<768||matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("portfolioIntroPlayedV22")){finishIntro(true);return}
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("portfolioIntroPlayedV24")){finishIntro(true);return}
  introState="FALLING";pile.innerHTML=projects.slice(0,8).map((p,i)=>{
-   const width=Math.min(310,Math.max(220,innerWidth*.22));
+   const width=innerWidth<768?Math.min(220,innerWidth*.5):Math.min(310,Math.max(220,innerWidth*.22));
    const spread=Math.min(innerWidth*.15,190);
    const x=[-.85,.55,-.38,.8,0,-.65,.35,0][i%8]*spread-width/2;
    const y=-Math.min(innerHeight*.28,220)-i*16;
@@ -36,7 +36,7 @@ function beginIntro(){
 function finishIntro(immediate=false){
  if(introState==="READY"||introState==="DISPERSING")return;
  clearTimeout(introTimer);introState="DISPERSING";intro.classList.remove("waiting");
- const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");try{sessionStorage.setItem("portfolioIntroPlayedV22","true")}catch{};};
+ const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");try{sessionStorage.setItem("portfolioIntroPlayedV24","true")}catch{};};
  if(immediate||matchMedia("(prefers-reduced-motion: reduce)").matches){complete();return}
  const cards=$$(".intro-card",pile),targets=$$(".canvas-image",canvas);
  // Preserve each print's current pose, including a click during its fall.
@@ -94,6 +94,6 @@ addEventListener("blur",resetProximity);
 document.addEventListener("click",e=>{const projectEl=e.target.closest("[data-project]");if(projectEl){const p=projects.find(x=>x.id===projectEl.dataset.project);if(p)openProject(p);return}const panel=e.target.closest("[data-panel]");if(panel)openPanel(panel.dataset.panel);if(e.target.closest("[data-close-panel]"))closePanels();const filter=e.target.closest("[data-filter]");if(filter){$$("[data-filter]").forEach(b=>b.classList.toggle("active",b===filter));filterArchive(filter.dataset.filter)}const z=e.target.closest("[data-zoom]");if(z){if(z.dataset.zoom==="reset")initialCamera();else zoomAt(camera.scale*(z.dataset.zoom==="in"?1.18:.84))}});
 overlayClose.addEventListener("click",closeProject);$("#minimap").addEventListener("click",initialCamera);
 addEventListener("keydown",e=>{if(e.key==="Escape"){if(!overlay.hidden)closeProject();else closePanels()}if(e.key==="Enter"||e.key===" "){if(introState!=="READY")finishIntro(false)}});
-addEventListener("resize",()=>{if(innerWidth<768){finishIntro(true)}updateMinimap()});
+addEventListener("resize",()=>{updateMinimap()});
 const cursor=$("#cursor");addEventListener("pointermove",e=>{cursor.style.left=e.clientX+"px";cursor.style.top=e.clientY+"px";const view=!!e.target.closest("[data-project]");cursor.classList.toggle("view",view);cursor.querySelector("span").textContent=view?"VIEW":""});
 })();

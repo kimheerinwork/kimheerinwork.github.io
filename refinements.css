@@ -1,5 +1,15 @@
 /* Final storyboard: restrained catalogue typography and continuous print motion. */
 :root{--paper:#f3f3f0;--line:#cececa}
+.intro[hidden]{display:none!important}
+@media(max-width:767px){
+ .intro:not([hidden]){display:block;z-index:70}
+ body.intro-active{overflow:hidden}
+ body.intro-active #canvas-viewport{overflow:hidden;pointer-events:none}
+ .intro .intro-title{top:32%;width:100%}
+ .intro .intro-prompt{left:0;right:0;bottom:8%;text-align:center;font-size:9px}
+ .intro .intro-prompt::after{display:none}
+ .intro .intro-skip{bottom:max(18px,env(safe-area-inset-bottom));right:20px;min-height:44px;padding:12px}
+}
 .intro-title strong{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.1em}
 .intro-title{animation:title-appear 1.5s ease both}
 @keyframes title-appear{from{opacity:0}to{opacity:1}}
