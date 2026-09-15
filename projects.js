@@ -106,4 +106,36 @@ window.PORTFOLIO_PROJECTS = [
     description: "A fashion design project exploring the contradictory relationship between humans, manufactured objects, consumption and disposal.",
     video: null
   }
+  ,{
+    id: "heekaru-brand-concept-film",
+    title: "HEEKARU Brand Concept Film",
+    year: "2026",
+    category: "Brand Concept Film",
+    tools: ["GPT 2.0", "Higgsfield Seedance 2.5", "Kling 3.0"],
+    cover: "images/heekaru-cover.png",
+    coverAlt: "푸른 바닷속에서 손을 잡고 미소 짓는 종이인형과 클리오네 — HEEKARU 브랜드 콘셉트 필름",
+    images: ["images/heekaru-poster.jpg"],
+    video: "videos/heekaru-film.m4v",
+    description: "반복되는 실패와 좌절 속에서 지쳐가는 청년들에게 작은 위로를 전하는 HEEKARU의 브랜드 의미를 담은 콘셉트 필름입니다.",
+    sections: [
+      { heading: "OVERVIEW", text: "반복되는 실패와 좌절 속에서 지쳐가는 청년들에게 작은 위로를 전하는 HEEKARU의 브랜드 의미를 담은 콘셉트 필름입니다.\n\n현실과 환상이 교차하는 장면을 통해 실패한 순간에도 누군가 곁에 있어주는 것만으로 다시 미소 짓고 한 걸음 나아갈 수 있다는 메시지를 표현했습니다." },
+      { heading: "CONCEPT", text: "깊은 바닷속으로 가라앉는 종이인형은 실패와 외로움에 지친 마음을 상징합니다.\n\n그 곁으로 다가와 손을 내미는 클리오네는 문제를 대신 해결해주는 존재가 아닌, 조용히 곁을 지켜주는 위로와 응원을 의미합니다.\n\n모든 문제가 사라지지 않더라도 누군가 함께 있다는 사실만으로 다시 움직일 수 있다는 감정을 수중의 판타지 이미지와 현실 장면의 교차를 통해 시각화했습니다." },
+      { heading: "BRAND MESSAGE", quote: "실패를 없애주는 것이 아니라,\n실패한 순간 곁에 있어주는 것.", text: "HEEKARU가 전하고자 하는 가장 핵심적인 브랜드 메시지입니다." }
+    ],
+    credits: [
+      ["A Film by", "Kim Heerin"],
+      ["Creative Direction", "Kim Heerin"],
+      ["Visual Direction", "Kim Heerin"],
+      ["Editing", "Kim Heerin"],
+      ["Music", "Claude Debussy — Arabesque No. 1"],
+      ["Image Generation", "GPT 2.0"],
+      ["Video Generation", "Higgsfield Seedance 2.5 / Kling 3.0"]
+    ],
+    copyright: "© 2026 HEEKARU"
+  }
 ];
+// 날짜 미지정 작업은 해당 연도 안에서 먼저 표시합니다. 확인되면 date를 추가하세요.
+window.PORTFOLIO_PROJECTS.sort((a,b)=>{
+  const key=p=>(p.date||`${p.year}.12.31`).split('.').map(v=>v.padStart(2,'0')).join('');
+  return key(b).localeCompare(key(a));
+});

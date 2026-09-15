@@ -19,15 +19,15 @@
 .intro.waiting .intro-prompt{animation:breathe 3s ease-in-out infinite}
 @keyframes breathe{50%{opacity:.5}}
 .intro.dispersing .intro-title,.intro.dispersing .intro-prompt,.intro.dispersing .intro-skip{opacity:0;animation:none}
-.intro-card{box-shadow:0 2px 2px #11111112;transform-origin:0 0;backface-visibility:hidden}
+.intro-card{box-shadow:0 8px 12px #183b3040,0 22px 40px #183b3030;transform-origin:0 0;backface-visibility:hidden}
 /* Prints tip toward the table as they land; later sheets sit slightly higher. */
 .intro-card.falling{animation-name:flat-print-fall;animation-fill-mode:both}
 @keyframes flat-print-fall{
-  0%{transform:translate3d(var(--start-x),-125vh,0) perspective(900px) rotateX(5deg) rotateZ(var(--start-r));opacity:0}
+  0%{transform:translate3d(var(--start-x),-125vh,0) perspective(900px) rotateX(5deg) rotateZ(var(--start-r));opacity:0;box-shadow:0 45px 65px #183b3018}
   8%{opacity:1}
   70%{transform:translate3d(var(--pile-x),calc(var(--pile-y) - 55px),0) perspective(900px) rotateX(28deg) rotateZ(var(--pile-r))}
   93%{transform:translate3d(var(--pile-x),calc(var(--pile-y) + 2px),0) perspective(900px) rotateX(calc(var(--pile-tilt) + 2deg)) rotateZ(var(--pile-r))}
-  100%{transform:translate3d(var(--pile-x),var(--pile-y),0) perspective(900px) rotateX(var(--pile-tilt)) rotateZ(var(--pile-r));opacity:1}
+  100%{transform:translate3d(var(--pile-x),var(--pile-y),0) perspective(900px) rotateX(var(--pile-tilt)) rotateZ(var(--pile-r));opacity:1;box-shadow:0 8px 12px #183b3040,0 22px 40px #183b3030}
 }
 .intro-card img{width:100%;height:100%}
 .intro-active .canvas-image{visibility:hidden}
@@ -83,3 +83,13 @@
 @media(max-width:479px){#project-canvas{grid-template-columns:1fr;padding-left:40px;padding-right:40px}}
 .about-layout h2{font-family:var(--serif);font-weight:500;letter-spacing:-.035em;line-height:.95}
 @media(max-width:767px){#overlay-content{display:block;padding:45px 16px 0}.detail-head{padding:0 0 40px}.detail-cover{padding:0}.detail-description{padding:50px 0}.detail-gallery img:nth-child(even){max-width:100%}.preview-sheet{display:none}.intro-prompt{right:5%}.mobile-archive header{min-height:44vh}.mobile-archive h1{margin-top:6vh}.mobile-heading h2{font-weight:500}.about-layout h2{font-size:65px}}
+.film-description{max-width:900px;margin:64px auto;padding:0 24px;line-height:1.9}
+.film-description section{margin-bottom:48px}
+.film-description h2{font:500 13px Inter,sans-serif;letter-spacing:.12em;margin-bottom:24px}
+.film-description p{margin:0 0 20px}
+.film-description blockquote{margin:24px 0;font-size:clamp(20px,3vw,30px);font-weight:600;line-height:1.6}
+.film-description dl{margin:0 0 32px}
+.film-description dl div{display:grid;grid-template-columns:minmax(120px,1fr) 2fr;gap:16px;margin:12px 0}
+.film-description dd{margin:0}
+.intro{background:#B8D1C8}
+.site-header{background:linear-gradient(110deg,rgba(184,209,200,.98),rgba(218,234,227,.92) 60%,rgba(244,248,246,.85));backdrop-filter:blur(12px)}
