@@ -1,0 +1,75 @@
+/* Final storyboard: restrained catalogue typography and continuous print motion. */
+:root{--paper:#f3f3f0;--line:#cececa}
+.intro-title strong{font-family:var(--serif);font-size:25px;font-weight:500;letter-spacing:.1em}
+.intro-title{animation:title-appear 1.5s ease both}
+@keyframes title-appear{from{opacity:0}to{opacity:1}}
+.intro-prompt{left:auto;right:12%;bottom:28%;transform:none;font-size:10px}
+.intro-prompt span{display:block;margin-top:7px}
+.intro-prompt::after{content:"";display:block;height:32px;width:1px;background:var(--muted);margin:16px auto 0}
+.intro.waiting .intro-prompt{animation:breathe 3s ease-in-out infinite}
+@keyframes breathe{50%{opacity:.5}}
+.intro.dispersing .intro-title,.intro.dispersing .intro-prompt,.intro.dispersing .intro-skip{opacity:0;animation:none}
+.intro-card{box-shadow:0 2px 2px #11111112;transform-origin:0 0;backface-visibility:hidden}
+/* Prints tip toward the table as they land; later sheets sit slightly higher. */
+.intro-card.falling{animation-name:flat-print-fall;animation-fill-mode:both}
+@keyframes flat-print-fall{
+  0%{transform:translate3d(var(--start-x),-125vh,0) perspective(900px) rotateX(5deg) rotateZ(var(--start-r));opacity:0}
+  8%{opacity:1}
+  70%{transform:translate3d(var(--pile-x),calc(var(--pile-y) - 55px),0) perspective(900px) rotateX(28deg) rotateZ(var(--pile-r))}
+  93%{transform:translate3d(var(--pile-x),calc(var(--pile-y) + 2px),0) perspective(900px) rotateX(calc(var(--pile-tilt) + 2deg)) rotateZ(var(--pile-r))}
+  100%{transform:translate3d(var(--pile-x),var(--pile-y),0) perspective(900px) rotateX(var(--pile-tilt)) rotateZ(var(--pile-r));opacity:1}
+}
+.intro-card img{width:100%;height:100%}
+.intro-active .canvas-image{visibility:hidden}
+.canvas-meta{grid-template-columns:24px 1fr;gap:6px;padding-top:15px}
+.canvas-meta h2{font-size:29px;font-weight:500;line-height:1.12}
+.canvas-meta h2 span{font-size:15px;letter-spacing:.015em;line-height:1.2}
+.canvas-meta .num{font-size:20px}
+.canvas-meta .side{grid-column:2;text-align:left;font-size:15px;line-height:1.4}
+.site-header{transition-delay:.25s}
+.canvas-help{font-size:10px}
+.image-missing{min-height:150px;background:var(--pale);display:grid;place-items:center}
+.image-missing::after{content:attr(data-message);font-size:11px;color:#536a70;letter-spacing:.08em}
+.preview-sheet{position:fixed;z-index:80;left:50%;top:50%;transform:translate(-50%,-50%);width:min(320px,80vw);padding:18px;background:var(--paper);border:1px solid var(--line);pointer-events:none;opacity:0;transition:opacity .3s}
+.preview-sheet.visible{opacity:1}
+.preview-sheet p{margin:0 0 10px;font-size:11px}
+.preview-sheet h2{font:500 24px "Pretendard",sans-serif;margin:0 0 14px;letter-spacing:-.03em}
+.preview-sheet img{width:100%;max-height:300px;object-fit:contain;margin-bottom:14px}
+.preview-sheet small{display:block;font-size:10px;line-height:1.5}
+.preview-sheet footer{font-size:10px;margin-top:18px}
+.previewing .canvas-world{filter:blur(1.5px);transition:filter .3s}
+#overlay-content{display:grid;grid-template-columns:minmax(270px,.7fr) minmax(0,1.3fr);gap:40px;padding:55px 4vw 0}
+.detail-head{display:block;min-height:0;padding:0;grid-column:1;grid-row:1}
+.detail-head h1{font-size:clamp(35px,4vw,64px);line-height:1.06;letter-spacing:-.045em;font-weight:500}
+.detail-head h1 span{font-size:26px;line-height:1.12}
+.detail-facts{margin-top:40px}
+.detail-cover{grid-column:2;grid-row:1}
+.detail-cover img{max-height:80vh;background:transparent}
+.detail-description{grid-column:1/-1;padding:50px 0;grid-template-columns:.45fr 1fr 1fr;gap:4vw}
+.detail-description section{font-size:15px;line-height:1.8}
+.detail-gallery{grid-column:1/-1;padding:0 0 60px}
+.detail-gallery img:nth-child(even){max-width:72%;margin-left:auto;margin-right:0}
+.next-project{grid-column:1/-1;padding:55px 0}
+/* Main grid only: stable anchors, independently scaled 4:3 prints. */
+#canvas-viewport{display:block;overflow-y:auto;overflow-x:hidden;touch-action:pan-y;cursor:default}
+#canvas-world{position:relative;width:100%;height:auto;min-height:100%;will-change:auto}
+#project-canvas{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));column-gap:clamp(60px,6vw,100px);row-gap:100px;max-width:1220px;margin:0 auto;padding:140px 60px 100px}
+#project-canvas .canvas-item{position:relative;width:100%;transform:none;min-width:0}
+#project-canvas .grid-number{margin:0 0 calc(16.875% + 12px);font-size:10px;opacity:0;transition:opacity .55s}
+.ready #project-canvas .grid-number{opacity:1}
+#project-canvas .grid-frame{width:100%;aspect-ratio:4/3;position:relative}
+#project-canvas .canvas-image{width:100%;height:100%;aspect-ratio:4/3;transform:scale(var(--proximity-scale,1));opacity:var(--proximity-opacity,1);transform-origin:center;transition:transform .4s cubic-bezier(.2,.6,.25,1),opacity .4s;will-change:transform}
+#project-canvas .canvas-image img{transform:none;filter:none}
+#project-canvas .canvas-meta{display:block;padding-top:calc(16.875% + 12px)}
+#project-canvas .canvas-meta h2{font-size:18px}
+#project-canvas .canvas-meta h2 span{font-size:10px}
+#project-canvas .canvas-meta .side{margin-top:10px;font-size:10px;text-align:left}
+#project-canvas .grid-view{font-size:10px;margin-top:12px;opacity:0;transition:opacity .4s}
+#project-canvas .grid-near .grid-view{opacity:1}
+#canvas-world .world-note,#canvas-world .world-mark,#canvas-world .world-line,#canvas-viewport .canvas-help,#canvas-viewport .zoom-controls,#canvas-viewport .minimap{display:none}
+.mobile-archive{display:none}
+@media(max-width:1023px){#project-canvas{grid-template-columns:repeat(2,minmax(0,1fr));padding:130px 50px 80px;column-gap:70px;row-gap:90px}}
+@media(max-width:767px){#project-canvas{padding:110px 30px 70px;gap:70px 35px}#project-canvas .canvas-meta h2{font-size:16px}#project-canvas .canvas-meta{padding-top:24px}#project-canvas .grid-number{margin-bottom:16px}#project-canvas .grid-view{display:none}#project-canvas button:active .canvas-image{transform:scale(1.03)}}
+@media(max-width:479px){#project-canvas{grid-template-columns:1fr;padding-left:40px;padding-right:40px}}
+.about-layout h2{font-family:var(--serif);font-weight:500;letter-spacing:-.035em;line-height:.95}
+@media(max-width:767px){#overlay-content{display:block;padding:45px 16px 0}.detail-head{padding:0 0 40px}.detail-cover{padding:0}.detail-description{padding:50px 0}.detail-gallery img:nth-child(even){max-width:100%}.preview-sheet{display:none}.intro-prompt{right:5%}.mobile-archive header{min-height:44vh}.mobile-archive h1{margin-top:6vh}.mobile-heading h2{font-weight:500}.about-layout h2{font-size:65px}}

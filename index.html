@@ -1,85 +1,61 @@
 <!doctype html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KIM HEERIN — Visual Designer</title>
-  <meta name="description" content="Portfolio of Kim Heerin, a visual designer and creative director based in Korea.">
-  <meta name="theme-color" content="#a8bdb4">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>KIM HEERIN — Visual Archive</title>
+  <meta name="description" content="KIM HEERIN의 그래픽 디자인, 브랜딩, 패션, 영상 작업을 모은 인터랙티브 비주얼 아카이브입니다.">
+  <meta name="theme-color" content="#f4f4f1">
   <link rel="canonical" href="https://kimheerinwork.github.io/">
-  <meta property="og:title" content="KIM HEERIN — Visual Designer">
-  <meta property="og:description" content="Portfolio of Kim Heerin, a visual designer and creative director based in Korea.">
+  <meta property="og:title" content="KIM HEERIN — Visual Archive">
+  <meta property="og:description" content="Works, ideas and visual stories by KIM HEERIN.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kimheerinwork.github.io/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Nanum+Gothic:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=21">
+  <link rel="stylesheet" href="refinements.css?v=23">
 </head>
-<body>
-  <div class="top-anchor" id="top" aria-hidden="true"></div>
-  <a class="skip-link" href="#work">Skip to selected work</a>
-  <header class="site-header">
-    <a class="wordmark" href="#top" aria-label="KIM HEERIN, back to top">KIM HEERIN</a>
-    <nav aria-label="Primary navigation">
-      <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
-    </nav>
+<body class="intro-active">
+  <a class="skip-link" href="#archive-list">Skip to archive</a>
+  <header class="site-header" aria-label="Site header">
+    <a class="identity" href="#home" aria-label="KIM HEERIN visual archive home"><strong>KIM HEERIN</strong><span>GRAPHIC DESIGNER<br>KOREA</span></a>
+    <nav aria-label="Primary navigation"><button type="button" data-panel="archive-panel">ARCHIVE</button><button type="button" data-panel="about-panel">ABOUT</button><a href="mailto:kimheerin.work@gmail.com">CONTACT</a></nav>
   </header>
-
-  <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-mint" aria-hidden="true"></div>
-      <p class="hero-kicker">Selected works · 2022—2026</p>
-      <h1 id="hero-title"><span>KIM</span><span>HEERIN</span></h1>
-      <div class="hero-meta">
-        <p>Visual Designer<br>&amp; Creative Director</p>
-        <p>Korea</p>
-      </div>
-      <a class="scroll-cue" href="#work">View work <span aria-hidden="true">↓</span></a>
+  <main id="home">
+    <section class="intro" id="intro" aria-label="Portfolio introduction">
+      <div class="intro-title"><strong>KIM HEERIN</strong><span>VISUAL ARCHIVE</span><span>2022 — 2026</span></div>
+      <div class="intro-pile" id="intro-pile" aria-hidden="true"></div>
+      <p class="intro-prompt" id="intro-prompt">CLICK ANYWHERE <span>TO DISPERSE THE ARCHIVE</span></p>
+      <button class="intro-skip" id="intro-skip" type="button">SKIP INTRO</button>
     </section>
-
-    <section class="work" id="work" aria-labelledby="work-title">
-      <header class="section-intro reveal">
-        <p>01 / Collection</p><h2 id="work-title">WORK</h2><p>Select a work<br>to view details</p>
-      </header>
-      <div id="project-list" aria-live="polite"></div>
-      <noscript><p class="noscript">JavaScript is required to display the selected projects.</p></noscript>
-    </section>
-
-    <section class="about" id="about" aria-labelledby="about-title">
-      <p class="eyebrow reveal">02 / Profile</p>
-      <h2 id="about-title" class="reveal">ABOUT</h2>
-      <div class="about-grid reveal">
-        <p class="about-lead">Independent visual practice shaped by emotion, fantasy and storytelling.</p>
-        <div><p>Born in 2006, KIM HEERIN is a visual designer and creative director based in Korea.</p><p>Her practice spans visual identity, fashion, graphic design, moving image and art direction, exploring the relationship between emotion, fantasy and visual storytelling.</p></div>
+    <section class="canvas-viewport" id="canvas-viewport" aria-label="Interactive project canvas">
+      <div class="canvas-world" id="canvas-world">
+        <div class="world-note note-a">WORKS, IDEAS<br>AND OTHERS</div><div class="world-note note-b">37.5665° N<br>126.9780° E</div>
+        <div class="world-mark mark-a" aria-hidden="true">○</div><div class="world-mark mark-b" aria-hidden="true">×</div>
+        <div class="world-line line-a" aria-hidden="true"></div><div class="world-line line-b" aria-hidden="true"></div>
+        <div id="project-canvas"></div>
       </div>
+      <p class="canvas-help">DRAG TO EXPLORE · SCROLL TO MOVE · ⌘/CTRL + SCROLL TO ZOOM</p>
+      <div class="zoom-controls" aria-label="Canvas controls"><button type="button" data-zoom="in" aria-label="Zoom in">+</button><button type="button" data-zoom="out" aria-label="Zoom out">−</button><button type="button" data-zoom="reset" aria-label="Reset canvas">0</button></div>
+      <button class="minimap" id="minimap" type="button" aria-label="Reset canvas view"><span id="minimap-dots"></span><i id="minimap-view"></i></button>
     </section>
-
-    <section class="contact" id="contact" aria-labelledby="contact-title">
-      <p class="eyebrow reveal">03 / Get in touch</p>
-      <h2 id="contact-title" class="reveal">CONTACT</h2>
-      <div class="contact-grid reveal">
-        <p>For projects, collaborations<br>and inquiries.</p>
-        <address>
-          <a href="mailto:kimheerin.work@gmail.com">kimheerin.work@gmail.com</a>
-          <a href="https://instagram.com/h33rin" target="_blank" rel="noopener noreferrer">Instagram @h33rin <span aria-hidden="true">↗</span></a>
-          <span>Korea</span>
-        </address>
-      </div>
+    <section class="mobile-archive" id="archive-list" aria-labelledby="mobile-title">
+      <header><p>SELECTED WORKS</p><h1 id="mobile-title">VISUAL<br><em>ARCHIVE</em></h1><span>2022 — 2026</span></header><div id="mobile-projects"></div>
     </section>
   </main>
-
-  <footer>
-    <p class="footer-name">KIM HEERIN</p>
-    <div><p>© 2026 KIM HEERIN</p><a href="mailto:kimheerin.work@gmail.com">Email</a><a href="https://instagram.com/h33rin" target="_blank" rel="noopener noreferrer">Instagram</a><a href="#top">Back to top ↑</a></div>
-  </footer>
-
-  <div class="overlay" id="project-overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden>
-    <div class="overlay-bar"><p id="overlay-number"></p><button class="overlay-close" type="button" aria-label="Close project">Close <span aria-hidden="true">×</span></button></div>
-    <div class="overlay-content" id="overlay-content"></div>
-  </div>
-  <script src="projects.js?v=17"></script>
-  <script src="script.js?v=13"></script>
+  <aside class="side-panel" id="archive-panel" aria-labelledby="archive-title" hidden>
+    <header><p>INDEX / 2022—2026</p><button type="button" data-close-panel aria-label="Close archive">CLOSE ×</button></header>
+    <h2 id="archive-title">ARCHIVE</h2><div class="archive-filters" id="archive-filters" aria-label="Project filters"></div><div class="archive-index" id="archive-index"></div>
+  </aside>
+  <aside class="side-panel about-panel" id="about-panel" aria-labelledby="about-title" hidden>
+    <header><p>PROFILE / KIM HEERIN</p><button type="button" data-close-panel aria-label="Close about">CLOSE ×</button></header>
+    <div class="about-layout"><h2 id="about-title">A SMALL LIGHT<br>IN THE<br><em>DEEP SEA.</em></h2><div class="about-copy"><p>Born in 2006, KIM HEERIN is a visual designer and creative director based in Korea.</p><p>Her practice spans visual identity, fashion, graphic design, moving image and art direction, exploring the relationship between emotion, fantasy and visual storytelling.</p></div><address><span>KOREA</span><a href="mailto:kimheerin.work@gmail.com">EMAIL ↗</a><a href="https://instagram.com/h33rin" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a><span>© 2026 KIM HEERIN</span></address></div>
+  </aside>
+  <div class="project-overlay" id="project-overlay" role="dialog" aria-modal="true" aria-labelledby="overlay-title" hidden><div class="project-bar"><button type="button" id="overlay-close">← BACK TO CANVAS</button><p id="overlay-number"></p></div><article id="overlay-content"></article></div>
+  <div class="cursor" id="cursor" aria-hidden="true"><span>DRAG</span></div>
+  <script src="projects.js?v=20"></script><script src="script.js?v=23"></script>
 </body>
 </html>

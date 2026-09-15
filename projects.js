@@ -1,4 +1,12 @@
 /* 프로젝트 순서가 사이트 표시 순서입니다. 새 작업은 배열 맨 위에 추가하세요. */
+/*
+새 프로젝트 추가 방법
+1. images/project06 같은 새 폴더를 만듭니다.
+2. cover.jpg와 상세 이미지(01.jpg, 02.jpg...)를 넣습니다.
+3. 아래 프로젝트 객체 하나를 복사해 내용과 이미지 경로를 바꿉니다.
+4. canvas의 x, y는 작품 위치, size는 hero/wide/large/medium/portrait 중 하나,
+   rotation은 기울기입니다. 인트로·캔버스·아카이브·상세페이지가 자동 생성됩니다.
+*/
 window.PORTFOLIO_PROJECTS = [
   {
     id: "kkumteo",
@@ -12,6 +20,7 @@ window.PORTFOLIO_PROJECTS = [
     cover: "images/project01/cover.jpg",
     coverPosition: "top",
     coverAlt: "꿈터 프로젝트 포스터 — 대전의 미래형 복합 문화 랜드마크",
+    canvas: { x: 520, y: 420, size: "hero", rotation: -1.5 },
     images: ["images/project01/01.jpg?v=2"],
     detailFullBleed: true,
     descriptionKo: "대전을 대표하는 관광지와 도시의 상징성을 새롭게 제안한 가상 도시 랜드마크 프로젝트입니다. 과거 꿈돌이랜드의 장소성과 ‘꿈돌이’라는 지역 상징을 현대적으로 재해석해, 대형 전망대를 중심으로 놀이시설·상업시설·휴식공간·드론 서비스가 결합된 복합 문화공간 ‘꿈터’를 기획했습니다.\n\n관광 활성화와 대전만의 지역 브랜딩을 함께 고려했으며, 미래적인 공간과 친근한 캐릭터 이미지를 결합해 방문 자체가 하나의 경험이 되는 랜드마크를 표현했습니다. Midjourney를 활용해 공간과 비주얼 콘셉트를 시각화했으며, Adobe Illustrator를 통해 전체 그래픽 구성과 레이아웃을 완성했습니다.\n\n본 프로젝트는 제34회 대전디자인어워드에서 입상했습니다.",
@@ -30,6 +39,7 @@ window.PORTFOLIO_PROJECTS = [
     category: "Character Branding / Visual Identity",
     cover: "images/project02/cover.jpg?v=2",
     coverAlt: "딸기요정 홍베리 캐릭터 대표 이미지",
+    canvas: { x: 1760, y: 330, size: "medium", rotation: 2 },
     images: ["images/project02/01.jpg?v=2"],
     detailWidth: "70%",
     descriptionKo: "‘딸기요정’ 홍베리는 홍성의 특산물을 친근하고 기억하기 쉬운 캐릭터로 표현하기 위해 제작한 캐릭터 브랜딩 프로젝트입니다. 딸기를 모티브로 한 둥근 실루엣과 잎사귀, 작은 날개, 딸기 지팡이를 조합해 밝고 사랑스러운 인상의 캐릭터 홍베리를 디자인했습니다.\n\n기본 캐릭터를 중심으로 정면·측면·후면 턴어라운드와 다양한 표정 및 응용 동작을 제작해 캐릭터의 성격과 활용 범위를 확장했습니다. 또한 쇼핑백, 스티커, 패키지, 의류, 테이프, 그립톡 등 다양한 굿즈에 적용해 지역 특산물 캐릭터가 실제 브랜딩과 홍보 콘텐츠로 확장될 수 있는 가능성을 시각화했습니다.\n\n캐릭터와 그래픽 요소는 Adobe Illustrator를 중심으로 제작했으며, 이미지 보정과 합성 및 최종 시각화에는 Adobe Photoshop을 활용했습니다. 굿즈와 다양한 제품에 캐릭터가 적용된 모습을 구현하는 과정에는 Nano Banana Pro를 사용했습니다. 본 작품은 홍성 특산물 캐릭터 공모전 참가작으로 제작되었습니다.",
@@ -48,6 +58,7 @@ window.PORTFOLIO_PROJECTS = [
     category: "AI Fashion Film / Concept Direction",
     cover: "images/project03/cover.jpg?v=2",
     coverAlt: "숲속 소녀와 오두막을 담은 COYSEIO AI 패션 콘셉트 필름 썸네일",
+    canvas: { x: 2850, y: 620, size: "wide", rotation: -1 },
     images: [],
     descriptionKo: "COYSEIO의 2026 S/S 컬렉션을 재해석한 AI 패션 콘셉트 필름입니다. 기존 코이세이오가 보여주던 일본 학생 교복을 연상시키는 단정하고 소녀적인 이미지에서 출발해, 이번 시즌에 두드러진 숲속 소녀 같은 자연스럽고 몽환적인 분위기를 하나의 짧은 서사로 연결했습니다.\n\n영상은 일본 학생을 연상시키는 한 소녀가 숲속을 걷다가 작은 개미를 발견하는 장면에서 시작됩니다. 소녀는 개미를 따라 숲속 깊이 들어가고, 길 끝에서 작은 열쇠를 발견합니다. 열쇠를 주운 소녀가 숲속 오두막에 도착해 문을 열면, 그 안에서 COYSEIO의 2026 S/S 시즌 의상들을 마주하게 됩니다.\n\n기존 브랜드의 소녀적인 정체성에서 새로운 시즌의 자연적이고 동화적인 무드로 변화하는 과정을 ‘익숙한 학생의 이미지가 숲속 소녀의 세계로 이동하는 이야기’로 시각화했습니다. 패션 컬렉션의 분위기를 단순히 보여주는 데 그치지 않고, 브랜드 이미지의 변화를 판타지적인 스토리텔링으로 연결하는 데 중점을 두었습니다.\n\n장면의 콘셉트 기획과 이미지 제작에는 GPT 2.0을 활용했으며, 캐릭터의 움직임과 숲속 공간, 개미를 따라가는 장면과 오두막으로 이어지는 시네마틱 영상 구현에는 Kling AI를 사용했습니다. 배경음악으로는 REMEDIOS의 ‘Paradise’를 사용해 숲속을 탐험하는 소녀의 몽환적이고 서정적인 분위기를 더했습니다.",
     descriptionEn: "This project is an AI fashion concept film reinterpreting COYSEIO’s 2026 S/S Collection. It begins with the brand’s familiar youthful aesthetic, reminiscent of Japanese school uniforms, and gradually transitions into the softer, dreamlike, forest-inspired mood of the new season.\n\nThe film follows a schoolgirl-like character who discovers a small ant while walking through the woods. She follows it deeper into the forest and finds a mysterious key at the end of the trail. After picking it up, she arrives at a secluded cabin, where she discovers the garments from COYSEIO’s 2026 S/S Collection.\n\nThe project visualizes the transition from COYSEIO’s established girlish identity to the more natural and fairy-tale-like atmosphere of the new collection. Rather than simply presenting the garments, the film uses a short fantasy narrative to connect fashion, seasonal identity, and cinematic storytelling.\n\nGPT 2.0 was used for concept development and visual generation, while Kling AI was used to create character movement, forest environments, and cinematic sequences. “Paradise” by REMEDIOS was used as the background music to reinforce the film’s dreamy and lyrical atmosphere.",
@@ -64,6 +75,7 @@ window.PORTFOLIO_PROJECTS = [
     category: "Calendar Design / Graphic Design / Editorial",
     cover: "images/project04/cover.jpg?v=1",
     coverAlt: "파스텔 색감과 식기 그래픽으로 구성한 2026 일본어 음식 테마 캘린더 표지",
+    canvas: { x: 1180, y: 1660, size: "portrait", rotation: 1.2 },
     images: [
       "images/project04/calendar-full.jpg",
       "images/project04/01.jpg",
@@ -87,6 +99,7 @@ window.PORTFOLIO_PROJECTS = [
     category: "Fashion Design / Concept Development / Handmade",
     cover: "images/project05/cover.jpg?v=1",
     coverAlt: "Selfish Symbiosis 패션 디자인 화보",
+    canvas: { x: 2540, y: 1770, size: "large", rotation: -2 },
     images: ["images/project05/01.jpg"],
     descriptionKo: "본 작품은 ‘이기적 공생’이라는 주제를 통해 인간과 사물 사이에 존재하는 모순적인 관계를 조명한 패션 디자인 프로젝트입니다.\n\n인간의 편의를 위해 끊임없이 생산되는 소비재들이 사용 이후 쉽게 외면받고 버려지는 현실에 주목했습니다. 특히 자연의 분해자인 곰팡이조차 쉽게 분해하지 못하는 쓰레기를 계속해서 만들어내면서도, 그 안에서 편리함과 생존을 추구하는 인간의 모습을 이기적인 공생 관계로 해석했습니다.\n\n이러한 문제의식을 패션이라는 매체로 시각화해, 인간과 인공물, 소비와 폐기, 자연과 비자연적인 물질이 서로 얽혀 있는 불편한 관계를 표현했습니다. 단순한 환경 문제의 재현을 넘어, 우리가 만들어낸 사물에 의존하면서 동시에 그것을 버리고 살아가는 현대인의 모순적인 생존 방식을 드러내는 데 중점을 두었습니다.\n\n디자인 구상과 시각화 과정에는 Procreate를 활용했으며, 일부 제작 과정은 수작업으로 진행해 소재와 형태의 물성을 직접적으로 표현했습니다.",
     descriptionEn: "Selfish Symbiosis is a fashion design project that explores the contradictory relationship between humans and the objects they create.\n\nThe project focuses on consumer goods that are produced for human convenience but are quickly neglected and discarded after use. While humans continue to generate waste that even natural decomposers such as fungi cannot easily break down, they remain dependent on these materials for comfort and survival. This contradiction is interpreted as a form of selfish symbiosis.\n\nThrough fashion design, the project visualizes the uneasy relationship between humans and artificial objects, consumption and disposal, and nature and non-biodegradable materials. Rather than simply addressing environmental pollution, the work reflects on the paradox of modern life in which we continuously depend on manufactured objects while simultaneously producing and abandoning them.\n\nProcreate was used for concept development and digital visualization, while parts of the project were completed through manual, handmade processes to emphasize materiality and physical form.",
