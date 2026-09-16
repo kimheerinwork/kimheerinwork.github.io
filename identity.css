@@ -68,3 +68,11 @@ body.menu-visible #canvas-viewport,body:has(.side-panel:not([hidden])) #canvas-v
  .footer-bottom{flex-direction:column;align-items:flex-start;margin-top:40px;gap:15px}
  .designer-statement{font-size:17px}
 }
+.intro-logo{display:block;width:clamp(180px,24vw,300px);height:auto;margin:0 auto 20px}
+.about-profile img{max-width:340px;width:75%;display:block;margin:auto}
+.inline-about{padding:70px 4vw 30px;border-top:1px solid var(--mint);margin-top:70px}
+.inline-about>h2{font:500 14px var(--sans);letter-spacing:.1em}
+.inline-about .about-layout{padding:20px 0}
+.identity-footer{background:linear-gradient(120deg,#B8D1C8,#DCE7E2 65%,#EEF5F1);margin-left:0;margin-right:0;padding:45px 4vw 24px}
+@media(max-width:767px){.about-profile img{max-width:250px}.inline-about{padding:45px 25px 20px}.identity-footer{margin-left:0;margin-right:0;padding:35px 25px 24px}}
+@media(hover:hover) and (pointer:fine){html,body,body *{cursor:url("images/starfish-cursor.png") 20 20,auto!important}#cursor{display:none!important}}

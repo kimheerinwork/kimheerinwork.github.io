@@ -22,7 +22,7 @@ function zoomAt(next,cx=innerWidth/2,cy=innerHeight/2){const old=camera.scale,ne
 function renderMinimap(){const dots=$("#minimap-dots");dots.innerHTML=projects.map(p=>{const c=p.canvas||{};return `<b style="left:${((c.x||0)/WORLD.w)*100}%;top:${((c.y||0)/WORLD.h)*100}%"></b>`}).join("")}
 function updateMinimap(){const v=$("#minimap-view");if(!v)return;const w=Math.min(100,(innerWidth/(WORLD.w*camera.scale))*100),h=Math.min(100,(innerHeight/(WORLD.h*camera.scale))*100);v.style.width=w+"%";v.style.height=h+"%";v.style.left=Math.max(0,Math.min(100-w,(-camera.x/(WORLD.w*camera.scale))*100))+"%";v.style.top=Math.max(0,Math.min(100-h,(-camera.y/(WORLD.h*camera.scale))*100))+"%"}
 function beginIntro(){
- if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("portfolioIntroPlayedV27")){finishIntro(true);return}
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("portfolioIntroPlayedV28")){finishIntro(true);return}
  introState="FALLING";pile.innerHTML=projects.slice(0,8).map((p,i)=>{
    const width=innerWidth<768?Math.min(220,innerWidth*.5):Math.min(310,Math.max(220,innerWidth*.22));
    const spread=Math.min(innerWidth*.15,190);
@@ -36,7 +36,7 @@ function beginIntro(){
 function finishIntro(immediate=false){
  if(introState==="READY"||introState==="DISPERSING")return;
  clearTimeout(introTimer);introState="DISPERSING";intro.classList.remove("waiting");
- const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");try{sessionStorage.setItem("portfolioIntroPlayedV27","true")}catch{};};
+ const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");try{sessionStorage.setItem("portfolioIntroPlayedV28","true")}catch{};};
  if(immediate||matchMedia("(prefers-reduced-motion: reduce)").matches){complete();return}
  const cards=$$(".intro-card",pile),targets=$$(".canvas-image",canvas);
  // Preserve each print's current pose, including a click during its fall.

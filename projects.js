@@ -110,6 +110,7 @@ window.PORTFOLIO_PROJECTS = [
     id: "heekaru-brand-concept-film",
     title: "HEEKARU Brand Concept Film",
     year: "2026",
+    date: "2026.09.16",
     category: "Brand Concept Film",
     tools: ["GPT 2.0", "Higgsfield Seedance 2.5", "Kling 3.0"],
     cover: "images/heekaru-cover.png",
