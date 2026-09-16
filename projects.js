@@ -134,6 +134,24 @@ window.PORTFOLIO_PROJECTS = [
     ],
     copyright: "© 2026 HEEKARU"
   }
+  ,{
+    id: "dado",
+    title: "DADO — 한라수목원 힐링 문화공간",
+    year: "2026",
+    date: "2026.07.30",
+    participation: "제16회 제주 공공디자인 공모전 출품작",
+    category: "Public Design / Spatial Concept",
+    tools: ["AI Image Generation / GPT 2.0", "Image Editing / Adobe Photoshop", "Graphic & Layout Design / Adobe Illustrator"],
+    cover: "images/dado-cover.jpg",
+    coverAlt: "한라수목원 숲과 어우러진 곡선형 목조 힐링 문화공간 DADO",
+    images: ["images/dado-cover.jpg", "images/dado-detail.jpg"],
+    video: null,
+    description: "제주의 자연과 문화가 어우러지는 힐링 문화공간 DADO를 기획하고 시각화한 프로젝트입니다.",
+    sections: [
+      { heading: "OVERVIEW", text: "제16회 제주 공공디자인 공모전 출품작으로, 제주의 자연과 문화가 어우러지는 힐링 문화공간 DADO를 기획하고 시각화한 프로젝트입니다.\n\n한라수목원의 자연환경을 배경으로 방문객이 공간에 머무르며 휴식하고, 제주의 자연과 문화를 직접 경험할 수 있도록 공간의 콘셉트와 프로그램을 구성했습니다. 건축은 주변 숲의 흐름과 자연스럽게 이어질 수 있도록 유기적인 곡선과 목재 중심의 구조를 적용해, 건물 자체가 자연 속 하나의 풍경처럼 느껴지도록 디자인했습니다.\n\n내부에는 DADO Lounge, Herb Garden, 도서관 및 독서 공간, 다목적 갤러리, 편의시설 등을 배치해 휴식과 문화 체험이 자연스럽게 연결되도록 구성했습니다. 외관과 내부 공간 이미지, 평면도와 입면도를 함께 제작하여 공간의 형태와 이용 흐름을 시각적으로 전달했습니다." },
+      { heading: "Design Concept", quote: "제주의 자연을 오감으로 경험하는 힐링 문화공간", text: "자연을 단순히 바라보는 공간이 아닌, 직접 머무르고 체험하며 자연과 교감할 수 있는 공간을 목표로 했습니다. 부드러운 곡선의 건축 형태와 자연 소재, 풍부한 식재를 활용해 숲속에 자연스럽게 스며드는 공간을 표현했습니다." }
+    ]
+  }
 ];
 // 날짜 미지정 작업은 해당 연도 안에서 먼저 표시합니다. 확인되면 date를 추가하세요.
 window.PORTFOLIO_PROJECTS.sort((a,b)=>{

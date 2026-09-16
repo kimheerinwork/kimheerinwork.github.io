@@ -22,9 +22,9 @@ function zoomAt(next,cx=innerWidth/2,cy=innerHeight/2){const old=camera.scale,ne
 function renderMinimap(){const dots=$("#minimap-dots");dots.innerHTML=projects.map(p=>{const c=p.canvas||{};return `<b style="left:${((c.x||0)/WORLD.w)*100}%;top:${((c.y||0)/WORLD.h)*100}%"></b>`}).join("")}
 function updateMinimap(){const v=$("#minimap-view");if(!v)return;const w=Math.min(100,(innerWidth/(WORLD.w*camera.scale))*100),h=Math.min(100,(innerHeight/(WORLD.h*camera.scale))*100);v.style.width=w+"%";v.style.height=h+"%";v.style.left=Math.max(0,Math.min(100-w,(-camera.x/(WORLD.w*camera.scale))*100))+"%";v.style.top=Math.max(0,Math.min(100-h,(-camera.y/(WORLD.h*camera.scale))*100))+"%"}
 function beginIntro(){
- if(matchMedia("(prefers-reduced-motion: reduce)").matches||sessionStorage.getItem("portfolioIntroPlayedV28")){finishIntro(true);return}
+ if(matchMedia("(prefers-reduced-motion: reduce)").matches){finishIntro(true);return}
  introState="FALLING";pile.innerHTML=projects.slice(0,8).map((p,i)=>{
-   const width=innerWidth<768?Math.min(220,innerWidth*.5):Math.min(310,Math.max(220,innerWidth*.22));
+   const width=.9*(innerWidth<768?Math.min(220,innerWidth*.5):Math.min(310,Math.max(220,innerWidth*.22)));
    const spread=Math.min(innerWidth*.15,190);
    const x=[-.85,.55,-.38,.8,0,-.65,.35,0][i%8]*spread-width/2;
    const y=-Math.min(innerHeight*.28,220)-i*16;
@@ -36,7 +36,7 @@ function beginIntro(){
 function finishIntro(immediate=false){
  if(introState==="READY"||introState==="DISPERSING")return;
  clearTimeout(introTimer);introState="DISPERSING";intro.classList.remove("waiting");
- const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");try{sessionStorage.setItem("portfolioIntroPlayedV28","true")}catch{};};
+ const complete=()=>{introState="READY";intro.hidden=true;document.body.classList.remove("intro-active");document.body.classList.add("ready");};
  if(immediate||matchMedia("(prefers-reduced-motion: reduce)").matches){complete();return}
  const cards=$$(".intro-card",pile),targets=$$(".canvas-image",canvas);
  // Preserve each print's current pose, including a click during its fall.
@@ -60,7 +60,7 @@ function filterArchive(filter){$("#archive-index").innerHTML=projects.filter(p=>
 function paragraphs(text){return (text||"").split("\n\n").map(v=>`<p>${v}</p>`).join("")}
 function projectDescription(p){
  if(!p.sections)return `<div class="detail-description"><p>DESCRIPTION</p><section lang="ko"><h2>한국어 설명</h2>${paragraphs(p.descriptionKo||p.description)}</section><section lang="en"><h2>ENGLISH DESCRIPTION</h2>${paragraphs(p.descriptionEn||p.description)}</section></div>`;
- return `<div class="film-description" lang="ko">${p.sections.map(s=>`<section><h2>${s.heading}</h2>${s.quote?`<blockquote>${s.quote.split("\n").join("<br>")}</blockquote>`:""}${paragraphs(s.text)}</section>`).join("")}<section lang="en"><h2>CREDITS</h2><dl>${(p.credits||[]).map(([role,name])=>`<div><dt>${role}</dt><dd>${name}</dd></div>`).join("")}</dl><p>${p.copyright||""}</p></section></div>`;
+ return `<div class="film-description" lang="ko">${p.sections.map(s=>`<section><h2>${s.heading}</h2>${s.quote?`<blockquote>${s.quote.split("\n").join("<br>")}</blockquote>`:""}${paragraphs(s.text)}</section>`).join("")}${p.credits?.length?`<section lang="en"><h2>CREDITS</h2><dl>${(p.credits||[]).map(([role,name])=>`<div><dt>${role}</dt><dd>${name}</dd></div>`).join("")}</dl><p>${p.copyright||""}</p></section>`:""}</div>`;
 }
 function openProject(p){
  hidePreview();
